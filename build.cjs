@@ -150,7 +150,9 @@ const fallbackScript = `
 <script>
 (function(){
   var fallbackTimer = setTimeout(function() {
-    if (window.lenis && window.lenis.isStopped) {
+    var hero = document.querySelector('.slideshow-hero');
+    var heroLocked = !!(hero && getComputedStyle(hero).position === 'sticky' && document.querySelector('[data-slideshow="container"]'));
+    if (window.lenis && window.lenis.isStopped && (typeof window.gsap === 'undefined' || !heroLocked)) {
       window.lenis.start();
     }
     var preloader = document.getElementById('preloader');
