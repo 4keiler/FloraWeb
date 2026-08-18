@@ -1,0 +1,22 @@
+{
+  "name": "flora-web",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "FLORA — sitio estático de cosmética clínicamente probada, listo para Cloudflare Pages",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "node build.cjs",
+    "dev": "node serve-and-dev.cjs",
+    "preview": "node serve-and-dev.cjs",
+    "deploy": "wrangler pages deploy public --project-name flora-web"
+  },
+  "devDependencies": {
+    "astro": "^6.4.7",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "puppeteer": "^25.2.0",
+    "wrangler": "^4.0.0"
+  }
+}
